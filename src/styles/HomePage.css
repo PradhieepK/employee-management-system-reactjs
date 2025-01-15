@@ -1,0 +1,98 @@
+/* Container and General Styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-button {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .add-button:hover {
+    background-color: #45a049;
+  }
+
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .employee-table th,
+  .employee-table td {
+    border: 1px solid #cfcdcd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .employee-table th {
+    background-color: #e9e6e6;
+    color: #343030;
+  }
+  
+  .employee-table tr {
+    background-color: #ffffff;
+  }
+  
+  .employee-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  .edit-button,
+  .delete-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .edit-button {
+    background-color: #ffa500;
+    color: white;
+  }
+  
+  .edit-link {
+    background-color: #ffa500;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .edit-button:hover {
+    background-color: #e69500;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .delete-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  .empty-message {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+  }

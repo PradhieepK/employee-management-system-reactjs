@@ -1,0 +1,83 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Container Styling */
+  .edit-employee-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-employee-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #265830;
+  }
+  
+  /* Form Styling */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  /* Buttons and Links */
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .home-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4caf50;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .home-link:hover {
+    text-decoration: underline;
+  }
+  

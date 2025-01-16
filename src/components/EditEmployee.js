@@ -12,6 +12,13 @@ const EditEmployee = () => {
     department: "",
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    age: "",
+    position: "",
+    department: "",
+  });
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,12 +32,52 @@ const EditEmployee = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateForm = () => {
+    let valid = true;
+    let newErrors = { name: "", age: "", position: "", department: "" };
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required.";
+      valid = false;
+    }
+
+    // Age validation
+    if (
+      !formData.age ||
+      isNaN(formData.age) ||
+      formData.age < 18 ||
+      formData.age > 65
+    ) {
+      newErrors.age = "Age must be a number between 18 and 65.";
+      valid = false;
+    }
+
+    // Position validation
+    if (!formData.position.trim()) {
+      newErrors.position = "Position is required.";
+      valid = false;
+    }
+
+    // Department validation
+    if (!formData.department.trim()) {
+      newErrors.department = "Department is required.";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .put(`http://localhost:5000/api/employees/${id}`, formData)
-      .then(() => navigate("/"))
-      .catch((error) => console.error(error));
+
+    if (validateForm()) {
+      axios
+        .put(`http://localhost:5000/api/employees/${id}`, formData)
+        .then(() => navigate("/"))
+        .catch((error) => console.error(error));
+    }
   };
 
   return (
@@ -46,6 +93,7 @@ const EditEmployee = () => {
             onChange={handleChange}
             required
           />
+          {errors.name && <p className="error-text">{errors.name}</p>}
         </div>
         <div className="form-group">
           <label>Age</label>
@@ -56,6 +104,7 @@ const EditEmployee = () => {
             onChange={handleChange}
             required
           />
+          {errors.age && <p className="error-text">{errors.age}</p>}
         </div>
         <div className="form-group">
           <label>Position</label>
@@ -66,6 +115,7 @@ const EditEmployee = () => {
             onChange={handleChange}
             required
           />
+          {errors.position && <p className="error-text">{errors.position}</p>}
         </div>
         <div className="form-group">
           <label>Department</label>
@@ -76,6 +126,9 @@ const EditEmployee = () => {
             onChange={handleChange}
             required
           />
+          {errors.department && (
+            <p className="error-text">{errors.department}</p>
+          )}
         </div>
         <button type="submit" className="submit-button">
           Update

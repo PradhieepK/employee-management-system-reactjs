@@ -36,13 +36,11 @@ const EditEmployee = () => {
     let valid = true;
     let newErrors = { name: "", age: "", position: "", department: "" };
 
-    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = "Name is required.";
       valid = false;
     }
 
-    // Age validation
     if (
       !formData.age ||
       isNaN(formData.age) ||
@@ -53,13 +51,11 @@ const EditEmployee = () => {
       valid = false;
     }
 
-    // Position validation
     if (!formData.position.trim()) {
       newErrors.position = "Position is required.";
       valid = false;
     }
 
-    // Department validation
     if (!formData.department.trim()) {
       newErrors.department = "Department is required.";
       valid = false;
